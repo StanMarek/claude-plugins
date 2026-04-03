@@ -1,0 +1,17 @@
+{
+  "name": "claude-faaah-marketplace",
+  "owner": {
+    "name": "Stan Marek"
+  },
+  "plugins": [
+    {
+      "name": "claude-faaah",
+      "source": {
+        "source": "github",
+        "repo": "StanMarek/claude-faaah-plugin"
+      },
+      "description": "Plays the iconic FAAAH sound effect every time you submit a prompt",
+      "version": "1.0.0"
+    }
+  ]
+}
