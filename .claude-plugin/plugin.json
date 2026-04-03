@@ -8,6 +8,5 @@
   },
   "repository": "https://github.com/StanMarek/claude-faaah-plugin",
   "license": "MIT",
-  "keywords": ["sound", "notification", "fun", "faaah", "prompt"],
-  "hooks": "./hooks/hooks.json"
+  "keywords": ["sound", "notification", "fun", "faaah", "prompt"]
 }
