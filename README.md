@@ -8,19 +8,28 @@ A [Claude Code](https://claude.ai/code) plugin that plays the iconic **FAAAH** s
 
 ## Quick Start
 
-**Inside Claude Code:**
+**Step 1 — Add the marketplace:**
 
 ```
-/plugin install claude-faaah@StanMarek/claude-faaah-plugin
+/plugin marketplace add StanMarek/claude-faaah-plugin
 ```
 
-**Via CLI:**
+**Step 2 — Install the plugin:**
 
-```bash
-claude plugin install claude-faaah@StanMarek/claude-faaah-plugin
+```
+/plugin install claude-faaah
 ```
 
 That's it. Submit a prompt. Hear the sound. Feel alive.
+
+### Alternative: Local Install
+
+Clone the repo and point Claude Code at it directly:
+
+```bash
+git clone https://github.com/StanMarek/claude-faaah-plugin.git
+claude --plugin-dir ./claude-faaah-plugin
+```
 
 ---
 
@@ -54,6 +63,12 @@ Want a different sound? Fork the repo and replace `assets/faaah.mp3` with any `.
 
 ```
 /plugin uninstall claude-faaah
+```
+
+To also remove the marketplace source:
+
+```
+/plugin marketplace remove StanMarek/claude-faaah-plugin
 ```
 
 ---
