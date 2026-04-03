@@ -1,0 +1,13 @@
+{
+  "name": "claude-faaah",
+  "version": "1.0.0",
+  "description": "Plays the iconic FAAAH sound effect every time you submit a prompt in Claude Code",
+  "author": {
+    "name": "StanMarek",
+    "url": "https://github.com/StanMarek"
+  },
+  "repository": "https://github.com/StanMarek/claude-faaah-plugin",
+  "license": "MIT",
+  "keywords": ["sound", "notification", "fun", "faaah", "prompt"],
+  "hooks": "./hooks/hooks.json"
+}
