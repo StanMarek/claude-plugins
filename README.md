@@ -1,39 +1,75 @@
 # claude-faaah
 
-A Claude Code plugin that plays the iconic **FAAAH** sound effect every time you submit a prompt.
+> Every prompt deserves a battle cry.
 
-Because coding should sound like a fight night.
+A [Claude Code](https://claude.ai/code) plugin that plays the iconic **FAAAH** sound effect every time you submit a prompt. Zero config. Zero lag. Pure energy.
 
-## Install
+---
 
-```bash
+## Quick Start
+
+**Inside Claude Code:**
+
+```
 /plugin install claude-faaah@StanMarek/claude-faaah-plugin
 ```
 
-Or via CLI:
+**Via CLI:**
 
 ```bash
 claude plugin install claude-faaah@StanMarek/claude-faaah-plugin
 ```
 
-## How it works
+That's it. Submit a prompt. Hear the sound. Feel alive.
 
-The plugin registers a `UserPromptSubmit` hook that fires every time you press Enter. It plays the bundled sound file in the background using your system's audio player — no blocking, no lag.
+---
 
-**Supported platforms:**
-- macOS (`afplay`)
-- Linux (`paplay` / `aplay`)
+## How It Works
 
-## Custom sound
+The plugin hooks into Claude Code's `UserPromptSubmit` lifecycle event. When you press Enter, a lightweight background process plays the bundled sound file using your system's native audio player. No blocking, no delay, no dependencies to install.
 
-Want a different sound? Replace `assets/faaah.mp3` with your own `.mp3` file.
+```
+You hit Enter → Hook fires → Sound plays in background → Claude responds normally
+```
+
+---
+
+## Platform Support
+
+| Platform | Audio Backend | Status |
+|----------|--------------|--------|
+| macOS    | `afplay`     | Supported |
+| Linux    | `paplay` / `aplay` | Supported |
+| Windows  | —            | Not supported (use WSL) |
+
+---
+
+## Customization
+
+Want a different sound? Fork the repo and replace `assets/faaah.mp3` with any `.mp3` file. The filename must stay the same.
+
+---
 
 ## Uninstall
 
-```bash
+```
 /plugin uninstall claude-faaah
 ```
 
+---
+
+## Contributing
+
+PRs welcome. Keep it simple — this plugin does one thing and does it well.
+
+1. Fork the repo
+2. Create a feature branch
+3. Submit a PR
+
+Branch protection is enabled — all changes require a pull request with review.
+
+---
+
 ## License
 
-MIT
+[MIT](LICENSE)
