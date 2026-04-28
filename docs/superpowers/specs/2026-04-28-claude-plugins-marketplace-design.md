@@ -141,16 +141,11 @@ The only change vs. the existing manifest is the `repository` URL (`claude-faaah
 
 **`scripts/statusline.sh`:**
 
-Derived from `~/.claude/statusline-command.sh` with the following modifications:
+Verbatim copy of `~/.claude/statusline-command.sh`. Inspection of the source script reveals it does not actually `source` `statusline-config.txt` and contains no `SHOW_X` guards — the config file on the user's disk is orphaned/unused. The "hardcode all-on, strip config" decision therefore reduces to "copy the script unchanged." No script modifications are required.
 
-1. Remove the `source ~/.claude/statusline-config.txt` (or equivalent file-loading) line.
-2. Remove every guard of the form `[ "$SHOW_X" = "1" ] && …` — the rendering is unconditional.
-3. Remove any references to the dropped `SHOW_DIRECTORY`, `SHOW_BRANCH`, `SHOW_USAGE`, `SHOW_PROGRESS_BAR`, `SHOW_RESET_TIME` variables.
-4. Leave all field rendering, color codes, and layout logic untouched.
+Runtime dependencies (already required by the original script): `bash`, `jq`, `git`. macOS battery support uses `pmset`; Linux memory/battery paths in the script are macOS-specific (`vm_stat`, `pmset`) and will silently no-op on Linux for those fields. No new dependencies introduced by this restructure.
 
-Runtime dependencies (already required by the original script): `bash`, `jq`, `git`. macOS battery support uses `pmset`. Linux uses `/sys/class/power_supply/`. No new dependencies introduced by this restructure.
-
-The `.bak` files (`statusline-command.sh.bak`, `statusline-command.singleline.bak`, `statusline-command copy.sh`) and `statusline-config.txt` from `~/.claude/` are **not** copied into the plugin.
+The `.bak` files (`statusline-command.sh.bak`, `statusline-command.singleline.bak`, `statusline-command copy.sh`) and the orphan `statusline-config.txt` from `~/.claude/` are **not** copied into the plugin.
 
 ### `plugins/hostile-cto/`
 
