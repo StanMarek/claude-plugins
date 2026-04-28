@@ -6,7 +6,7 @@
     "name": "StanMarek",
     "url": "https://github.com/StanMarek"
   },
-  "repository": "https://github.com/StanMarek/claude-faaah-plugin",
+  "repository": "https://github.com/StanMarek/claude-plugins",
   "license": "MIT",
   "keywords": ["sound", "notification", "fun", "faaah", "prompt"]
 }
