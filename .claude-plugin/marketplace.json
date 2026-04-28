@@ -1,0 +1,34 @@
+{
+  "name": "claude-plugins",
+  "owner": {
+    "name": "StanMarek",
+    "url": "https://github.com/StanMarek"
+  },
+  "metadata": {
+    "description": "A small marketplace of Claude Code plugins by StanMarek.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "claude-faaah",
+      "version": "1.0.0",
+      "author": { "name": "StanMarek", "url": "https://github.com/StanMarek" },
+      "description": "Plays the iconic FAAAH sound on every prompt submit.",
+      "source": "./plugins/claude-faaah"
+    },
+    {
+      "name": "pastel-statusline",
+      "version": "1.0.0",
+      "author": { "name": "StanMarek", "url": "https://github.com/StanMarek" },
+      "description": "Three-line pastel-colored statusline showing identity, workspace, and resource info.",
+      "source": "./plugins/pastel-statusline"
+    },
+    {
+      "name": "hostile-cto",
+      "version": "1.0.0",
+      "author": { "name": "StanMarek", "url": "https://github.com/StanMarek" },
+      "description": "Output style: a profanity-laden CTO who teaches through trauma.",
+      "source": "./plugins/hostile-cto"
+    }
+  ]
+}
