@@ -1,0 +1,16 @@
+{
+  "name": "pastel-statusline",
+  "version": "1.0.0",
+  "description": "Three-line pastel-colored statusline showing model, agent, session, git, usage, cost, CPU, memory, and battery",
+  "author": {
+    "name": "StanMarek",
+    "url": "https://github.com/StanMarek"
+  },
+  "repository": "https://github.com/StanMarek/claude-plugins",
+  "license": "MIT",
+  "keywords": ["statusline", "ui", "ansi", "git", "usage"],
+  "statusLine": {
+    "type": "command",
+    "command": "bash ${CLAUDE_PLUGIN_ROOT}/scripts/statusline.sh"
+  }
+}

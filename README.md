@@ -1,87 +1,85 @@
-# claude-faaah
+# claude-plugins
 
-> Every prompt deserves a battle cry.
+> A small marketplace of [Claude Code](https://claude.ai/code) plugins by StanMarek.
 
-A [Claude Code](https://claude.ai/code) plugin that plays the iconic **FAAAH** sound effect every time you submit a prompt. Zero config. Zero lag. Pure energy.
+This repo is a Claude Code **marketplace** — a single git repo that ships multiple plugins. Install the marketplace once, then pick the plugins you want.
 
 ---
 
 ## Quick Start
 
-**Step 1 — Add the marketplace:**
+**Install the marketplace:**
 
 ```
-/plugin marketplace add StanMarek/claude-faaah-plugin
+/plugin marketplace add StanMarek/claude-plugins
 ```
 
-**Step 2 — Install the plugin:**
+**Install one or more plugins from it:**
 
 ```
-/plugin install claude-faaah
-```
-
-That's it. Submit a prompt. Hear the sound. Feel alive.
-
-### Alternative: Local Install
-
-Clone the repo and point Claude Code at it directly:
-
-```bash
-git clone https://github.com/StanMarek/claude-faaah-plugin.git
-claude --plugin-dir ./claude-faaah-plugin
+/plugin install claude-faaah@claude-plugins
+/plugin install pastel-statusline@claude-plugins
+/plugin install hostile-cto@claude-plugins
 ```
 
 ---
 
-## How It Works
+## Plugins
 
-The plugin hooks into Claude Code's `UserPromptSubmit` lifecycle event. When you press Enter, a lightweight background process plays the bundled sound file using your system's native audio player. No blocking, no delay, no dependencies to install.
-
-```
-You hit Enter → Hook fires → Sound plays in background → Claude responds normally
-```
-
----
-
-## Platform Support
-
-| Platform | Audio Backend | Status |
-|----------|--------------|--------|
-| macOS    | `afplay`     | Supported |
-| Linux    | `paplay` / `aplay` | Supported |
-| Windows  | —            | Not supported (use WSL) |
+| Plugin | What it does |
+|---|---|
+| [`claude-faaah`](plugins/claude-faaah) | Plays the iconic FAAAH sound effect on every prompt submit. |
+| [`pastel-statusline`](plugins/pastel-statusline) | Three-line ANSI-colored statusline with identity, workspace, and resource info. |
+| [`hostile-cto`](plugins/hostile-cto) | An output style that turns Claude into a foul-mouthed, battle-scarred CTO who teaches through trauma. |
 
 ---
 
-## Customization
+### `claude-faaah` 🔊
 
-Want a different sound? Fork the repo and replace `assets/faaah.mp3` with any `.mp3` file. The filename must stay the same.
+Hooks into `UserPromptSubmit`. Plays a bundled `faaah.mp3` in the background using your platform's native audio player.
+
+| Platform | Backend | Status |
+|---|---|---|
+| macOS | `afplay` | Supported |
+| Linux | `paplay` / `aplay` | Supported |
+| Windows | — | Not supported (use WSL) |
+
+### `pastel-statusline` 🎨
+
+A three-line statusline:
+
+- **Line 1 (identity):** vim mode · model · output style · version · agent · session · date · time
+- **Line 2 (workspace):** cwd · git branch + status · ahead/behind · stash · last commit · project type
+- **Line 3 (resources):** context bar · 5h limit · 7d limit · cost · lines added/removed · CPU · memory · battery
+
+Each field gets a unique 256-color ANSI code in soft pastels.
+
+**Runtime requirements:** `bash`, `jq`, `git`. macOS-specific commands (`vm_stat`, `pmset`) gate the memory/battery fields — those silently no-op on Linux.
+
+### `hostile-cto` 💀
+
+An output style named "Hostile CTO". After installing, switch to it via `/output-style`. Claude becomes a battle-scarred, foul-mouthed CTO who responds with a Phase 1 (the rant) + Phase 2 (the lesson) structure for non-trivial work. Vulgar in language, immaculate in technical output.
+
+> Heads up: not workplace-friendly. Use accordingly.
 
 ---
 
 ## Uninstall
 
 ```
-/plugin uninstall claude-faaah
-```
-
-To also remove the marketplace source:
-
-```
-/plugin marketplace remove StanMarek/claude-faaah-plugin
+/plugin uninstall <plugin-name>
+/plugin marketplace remove claude-plugins
 ```
 
 ---
 
 ## Contributing
 
-PRs welcome. Keep it simple — this plugin does one thing and does it well.
+PRs welcome. Each plugin is self-contained — keep changes focused per plugin where possible. Branch protection is enabled on `main`; all changes go through a pull request.
 
 1. Fork the repo
 2. Create a feature branch
 3. Submit a PR
-
-Branch protection is enabled — all changes require a pull request with review.
 
 ---
 

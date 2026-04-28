@@ -1,0 +1,12 @@
+{
+  "name": "hostile-cto",
+  "version": "1.0.0",
+  "description": "Output style: a foul-mouthed, battle-scarred CTO who teaches through trauma. Vulgar but technically immaculate.",
+  "author": {
+    "name": "StanMarek",
+    "url": "https://github.com/StanMarek"
+  },
+  "repository": "https://github.com/StanMarek/claude-plugins",
+  "license": "MIT",
+  "keywords": ["output-style", "personality", "review", "fun"]
+}
