@@ -17,9 +17,9 @@ This repo is a Claude Code **marketplace** — a single git repo that ships mult
 **Install one or more plugins from it:**
 
 ```
-/plugin install claude-faaah@claude-plugins
-/plugin install pastel-statusline@claude-plugins
-/plugin install hostile-cto@claude-plugins
+/plugin install claude-faaah@stanmarek-plugins
+/plugin install pastel-statusline@stanmarek-plugins
+/plugin install hostile-cto@stanmarek-plugins
 ```
 
 ---
@@ -68,7 +68,7 @@ An output style named "Hostile CTO". After installing, switch to it via `/output
 
 ```
 /plugin uninstall <plugin-name>
-/plugin marketplace remove claude-plugins
+/plugin marketplace remove stanmarek-plugins
 ```
 
 ---
